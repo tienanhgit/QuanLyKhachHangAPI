@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<script type="text/javascript">
+
+
+    function khachhang(makh, tenkh, dienthoai, diachi, masothue, trangthai) {
+        this.makh = makh;
+        this.tenkh = tenkh;
+        this.dienthoai = dienthoai;
+        this.diachi = diachi;
+        this.masothue = masothue;
+        this.trangthai = trangthai;
+    }
+    kh1 = new khachhang("ITGKH001", "Anh BT 1", "0378477476", "Nhổn, Bắc Từ Liêm, Hà Nội", "038858974", "Sử dụng");
+    kh2 = new khachhang("ITGKH001", "Anh BT 2", "0378477476", "Nhổn, Bắc Từ Liêm, Hà Nội", "038858974", "Sử dụng");
+    kh3 = new khachhang("ITGKH001", "Anh BT 3", "0378477476", "Nhổn, Bắc Từ Liêm, Hà Nội", "038858974", "Không Sử dụng");
+  
+    listObject.push(kh2, kh1, kh3, kh4, kh5, kh6, kh7, kh8);
+
+
+
+    var app = angular.module('MainApp', []);
+    app.controller("KhachHangController", function ($scope, $http) {
+        $http({
+            method: 'GET',
+            url: '/KH_API/api/KhachHangAPI/GetKhachHang',
+            params: {
+
+                ma_sinh_vien: 'SV01'
+            }
+        }).then(function (data) {
+            console.log(data);
+        });
+    });
+
+
+
+
+</script>
